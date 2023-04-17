@@ -155,6 +155,7 @@ void BuySellAlgorithm(std::vector<double>& values, std::vector<double>& macd, st
             holding = true;
             stopLossPrice = price * stopLoss;
             takeProfitPrice = price * takeProfit;
+            cout << "Buy" << i << " " << price << endl;
         }
 
         // Check for sell signal
@@ -166,6 +167,7 @@ void BuySellAlgorithm(std::vector<double>& values, std::vector<double>& macd, st
             holding = false;
             stopLossPrice = 0.0;
             takeProfitPrice = 0.0;
+            cout << i << " " << price << endl;
         }
 
         // Check for stop loss or take profit
@@ -178,6 +180,7 @@ void BuySellAlgorithm(std::vector<double>& values, std::vector<double>& macd, st
             stopLossPrice = 0.0;
             takeProfitPrice = 0.0;
         }
+        
     }
 
     // Print final results
@@ -220,11 +223,11 @@ void StartProgram(string fName)
 
 int main() 
 {
-    //string fileName = "Wig20Otwarcie.txt";
-    //StartProgram(fileName);
-
-    string fileName = "a.txt";
+    string fileName = "msft.txt";
     StartProgram(fileName);
+
+    //string fileName = "a.txt";
+    //StartProgram(fileName);
     return 0;
 }
 
